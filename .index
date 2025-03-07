@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streetwear Co.</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Streetwear Co.</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="cart-icon">🛒</li>
+        </ul>
+        <button class="menu-btn">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h2>Fresh Drops, Every Season</h2>
+        <p>Stay ahead of the trends with our exclusive collections.</p>
+        <button class="shop-btn">Shop Now</button>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="product">
+            <img src="hoodie.jpg" alt="Hoodie">
+            <h3>Hoodie</h3>
+            <p>$60</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sneakers.jpg" alt="Sneakers">
+            <h3>Sneakers</h3>
+            <p>$120</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="cap.jpg" alt="Cap">
+            <h3>Cap</h3>
+            <p>$30</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Streetwear Co. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #222;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 50px;
+    background: #333;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.add-to-cart {
+    background: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: #222;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* script.js */
+document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+        alert("Added to cart!");
+    });
+});
