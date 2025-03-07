@@ -1,3 +1,4 @@
+
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
@@ -6,28 +7,42 @@ body {
     background: #121212;
     color: white;
     text-align: center;
-    overflow: hidden;
     position: relative;
+    overflow-x: hidden;
 }
 
-.background-logo {
+.background-logo-container {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(0deg);
-    width: 80vw;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
     opacity: 0.1;
+}
+
+.background-logo {
+    width: 60vw;
+    height: auto;
     animation: spin 20s linear infinite;
 }
 
 @keyframes spin {
     from {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
+}
+
+.navbar, .hero, .products, footer {
+    position: relative;
+    z-index: 1;
 }
 
 .navbar {
@@ -36,8 +51,6 @@ body {
     padding: 15px;
     background: #222;
     align-items: center;
-    position: relative;
-    z-index: 10;
 }
 
 .nav-links {
@@ -63,8 +76,6 @@ body {
 .hero {
     padding: 50px;
     background: #333;
-    position: relative;
-    z-index: 10;
 }
 
 .products {
@@ -72,8 +83,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    position: relative;
-    z-index: 10;
 }
 
 .product img {
@@ -92,8 +101,6 @@ body {
 footer {
     background: #222;
     padding: 10px;
-    position: relative;
-    z-index: 10;
 }
 
 @media (max-width: 768px) {
